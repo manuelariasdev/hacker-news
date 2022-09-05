@@ -5,7 +5,7 @@ import './index.css'
 import '@fontsource/baskervville'
 import '@fontsource/roboto'
 import { App } from './App'
-import MainglobalStyles from './MainGlobalStyles'
+import MainglobalStyles from './mainGlobalStyles'
 import theme from './theme';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
