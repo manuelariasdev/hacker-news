@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title <Title/> debe de hacer match con el snapshot Title 1`] = `
+<div>
+  <p
+    class="sc-bczRLJ kMVQkp"
+  />
+   
+</div>
+`;

@@ -84,7 +84,7 @@ export interface NewsProviderProps {
   children: React.ReactNode;
 }
 
-export type View = 'all' | 'my favs';
+export type View = 'all' | 'my faves';
 export interface State {
   query: string;
   page: number;
@@ -94,7 +94,7 @@ export interface State {
 }
 
 export type Action =
-  | { type: 'GET_QUERY'; payload: State['query'] }
+  | { type: 'GET_TYPE_OF_NEW'; payload: State['query'] }
   | { type: 'GET_PAGE'; payload: State['page'] }
   | { type: 'ADD_NEWS'; payload: News[] }
   | { type: 'ADD_FAVORITE'; payload: Hit }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Error } from './components/errors/Error'
-import { Home } from './components/Templates/Home/Home'
+import { NewsProvider } from './context/newsContext'
+import { AppRouter } from './routes'
+
 export const App = () => {
 
   const queryClient = new QueryClient({
@@ -14,17 +14,9 @@ export const App = () => {
   })
   return (
     <QueryClientProvider client={queryClient}>
-    
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-          <Route
-            path="*"
-            element={<Error/>}
-          />
-        </Routes>
-      </BrowserRouter>
-    
-      </QueryClientProvider>  
+    <NewsProvider>
+        <AppRouter/>
+    </NewsProvider>
+    </QueryClientProvider>  
   )
 }

@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { formatDistanceToNow } from 'date-fns'
 
 import { Icon, IconButton, Link, Text } from '../../Atoms'
 import { Flex } from '../Flex'
+import useNewsUpdater from '../../../hooks/useNewsUpdater'
 import { StyledCard } from './cardStyle'
 import type { Hit } from '../../../types'
 
@@ -11,6 +13,7 @@ export interface CardProps {
 }
 
 export const Card = React.memo(({ data, dataCard }: CardProps) => {
+  const { dispatch } = useNewsUpdater()
 
   return (
     <StyledCard
@@ -33,7 +36,8 @@ export const Card = React.memo(({ data, dataCard }: CardProps) => {
             <Flex columnGap="8px">
               <Icon name="time" />
               <Text size="xs">
-                Algo aqui
+                {formatDistanceToNow(new Date(data.created_at)) ?? '---'} by{' '}
+                {data.author ?? '---'}
               </Text>
             </Flex>
             <main>
@@ -60,7 +64,13 @@ export const Card = React.memo(({ data, dataCard }: CardProps) => {
                 !data.story_title ||
                 !data.story_url
               }
-              shape="circle"
+              shape="square"
+              onClick={() =>
+                dispatch({
+                  type: 'ADD_FAVORITE',
+                  payload: { ...data, is_fav: true }
+                })
+              }
             >
               <Icon name="favoriteOutlined" />
             </IconButton>
@@ -68,6 +78,9 @@ export const Card = React.memo(({ data, dataCard }: CardProps) => {
             : (
             <IconButton
               shape="circle"
+              onClick={() =>
+                dispatch({ type: 'REMOVE_FAVORITE', payload: data.objectID })
+              }
             >
               <Icon name="favoriteFilled" />
             </IconButton>

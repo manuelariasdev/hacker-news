@@ -1,9 +1,10 @@
 import React from 'react'
-import { Main } from '../../Organisms'
+import { Header, Main } from '../../Organisms'
 export const Home = () => {
   return (
     <>
-      <Main/>
+      <Header />
+      <Main />
     </>
     
   )

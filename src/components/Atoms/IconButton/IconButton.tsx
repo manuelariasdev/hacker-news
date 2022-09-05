@@ -22,7 +22,7 @@ export const IconButton = ({
     if (shape === 'circle') {
   return (
     <StyledIconCircleButton
-        data-cy={data}
+        data-circle={data}
         active={active}
         onClick={onClick}
         type="button"
@@ -34,7 +34,7 @@ export const IconButton = ({
     }
   return (
     <StyledIconSquareButton
-      data-cy={data}
+      data-square={data}
       active={active}
       onClick={onClick}
       type="button"

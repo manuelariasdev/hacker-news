@@ -5,8 +5,8 @@ import './index.css'
 import '@fontsource/baskervville'
 import '@fontsource/roboto'
 import { App } from './App'
-import theme from '../theme';
-import MainglobalStyles from './mainGlobalStyles'
+import MainglobalStyles from './MainGlobalStyles'
+import theme from './theme';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
