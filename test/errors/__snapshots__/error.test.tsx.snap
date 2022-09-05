@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error <Error/> debe de hacer match con el snapshot Error 1`] = `
+<div>
+  <div>
+    <h1>
+      BAD BAD BAD BAD BAD
+    </h1>
+  </div>
+   
+</div>
+`;
